@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VendingMachine.Payment;
+using VendingMachine.Stock;
+using Ximo.DependencyInjection;
+
 
 namespace VendingMachine
 {
@@ -21,6 +25,12 @@ namespace VendingMachine
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.RegisterDefaultCommandBus();
+            services.RegisterDefaultQueryProcessor();
+
+            services.RegisterPaymentServices();
+            services.RegisterStockServices();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
