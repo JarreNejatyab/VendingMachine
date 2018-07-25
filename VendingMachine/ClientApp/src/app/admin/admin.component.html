@@ -1,0 +1,53 @@
+
+<h1>Admin</h1>
+<hr />
+
+<div>
+  <table class="table table-condensed">
+    <tr>
+      <td>
+        <button class="btn btn-danger" (click)="reset()">Reset Payments</button>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="refresh()">Refresh Data</button>
+      </td>
+    </tr>
+  </table>
+  <br />
+</div>
+
+<div>
+  <label>Cash Balance:</label><label>{{cashBalance}}</label>
+</div>
+<div>
+  <label>CreditCard Balance:</label><label>{{creditCardBalance}}</label>
+</div>
+<br>
+<br>
+<div>
+  <p>
+    <a class="btn btn-default" [routerLink]="['/addCan']" role="button">Add Stock</a>
+  </p>
+</div>
+<br>
+<br>
+<div>
+  <label>Stock:</label>
+
+  <table class="table table-hover" *ngIf="stock">
+    <thead>
+      <tr>
+        <th>Flavour</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of stock">
+        <td>{{ s.flavour }}</td>
+      <td>{{ s.quantity }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteStock(s)">delete</button>
+      </td>
+    </tbody>
+  </table>
+</div>

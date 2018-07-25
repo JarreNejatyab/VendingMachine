@@ -1,0 +1,26 @@
+
+<h1>Vending Machine</h1>
+<hr />
+
+<div>
+  <table class="table table-hover" *ngIf="stock">
+    <thead>
+      <tr>
+        <th>Flavour</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of stock">
+        <td>{{ s.flavour }}</td>
+        <td>{{ s.price }}</td>
+        <td>
+          <button class="btn btn-success" [disabled]="s.quantity == 0" (click)="buyCash(s)">buy cash</button>
+        </td>
+        <td>
+          <button class="btn btn-warning" [disabled]="s.quantity == 0" (click)="buyCredit(s)">buy credit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

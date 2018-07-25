@@ -1,0 +1,40 @@
+<h3>Can</h3>
+<hr />
+
+<form [formGroup]="canForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Flavour</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="flavour">
+    </div>
+    <span class="text-danger" *ngIf="flavour.invalid && formDir.submitted">
+      flavour is required.
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Quantity</label>
+    <div class="col-md-4">
+      <input class="form-control" type="number" formControlName="quantity">
+    </div>
+    <span class="text-danger" *ngIf="quantity.invalid && formDir.submitted">
+      quantity is required.
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Price</label>
+    <div class="col-md-4">
+      <input class="form-control" type="number" formControlName="price">
+    </div>
+    <span class="text-danger" *ngIf="price.invalid && formDir.submitted">
+      price is required.
+    </span>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Save</button>
+    <button class="btn" (click)="cancel()">Cancel</button>
+  </div>
+</form>  
