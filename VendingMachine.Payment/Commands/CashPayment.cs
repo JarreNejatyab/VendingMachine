@@ -1,4 +1,4 @@
-namespace VendingMachine.Payment
+namespace VendingMachine.Payment.Commands
 {
     public class CashPayment : Commands.Payment
     {

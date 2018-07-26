@@ -1,4 +1,4 @@
-namespace VendingMachine.Payment
+namespace VendingMachine.Payment.Queries
 {
     public class GetBalance
     {

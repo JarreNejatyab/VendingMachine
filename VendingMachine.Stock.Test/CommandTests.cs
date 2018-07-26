@@ -57,5 +57,57 @@ namespace VendingMachine.Stock.Test
             dalMock.Verify(layer =>
                 layer.Delete(It.Is<string>(item => item == delete.Flavour)), Times.Once);
         }
+
+        [TestMethod]
+        public void LimitedTenHandlerWithData()
+        {
+            //init
+            var dalMock = new Mock<IVendingDataAccessLayer>();
+            var stock = new List<CanItem>();
+
+            for (var i = 0; i < 10; i++)
+                stock.Add(new CanItem($"flavour{i}", 2, 2.5m));
+
+            dalMock.Setup(layer =>
+                layer.GetAll()).Returns(() =>stock);
+
+            //act
+            var add = new AddStock("new flavour", 2, 4);
+            new AddStockHandler(dalMock.Object).Handle(add);
+
+            //assert
+            dalMock.Verify(layer =>
+                    layer.AddorUpdate(It.Is<CanItem>(item =>
+                        item.Flavour == add.Flavour &&
+                        item.Price == add.Price &&
+                        item.Quantity == add.Quantity)),
+                Times.Never);
+        }
+
+        [TestMethod]
+        public void LimitedNineHandlerWithData()
+        {
+            //init
+            var dalMock = new Mock<IVendingDataAccessLayer>();
+            var stock = new List<CanItem>();
+
+            for (var i = 0; i < 9; i++)
+                stock.Add(new CanItem($"flavour{i}", 2, 2.5m));
+
+            dalMock.Setup(layer =>
+                layer.GetAll()).Returns(() => stock);
+
+            //act
+            var add = new AddStock("new flavour", 2, 4);
+            new AddStockHandler(dalMock.Object).Handle(add);
+
+            //assert
+            dalMock.Verify(layer =>
+                    layer.AddorUpdate(It.Is<CanItem>(item =>
+                        item.Flavour == add.Flavour &&
+                        item.Price == add.Price &&
+                        item.Quantity == add.Quantity)),
+                Times.Once);
+        }
     }
 }

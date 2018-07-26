@@ -1,3 +1,8 @@
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("VendingMachine.Payment.Test")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+
 namespace VendingMachine.Payment
 {
     internal interface IPaymentAccessLayer

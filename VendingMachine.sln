@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{BECDA415-3181-49F6-A00D-0A9DB5C0752E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{BECDA415-3181-49F6-A00D-0A9DB5C0752E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Test", "VendingMachine.Test\VendingMachine.Test.csproj", "{E6EE3FCA-2A5D-4D51-8FC7-A8DC0A02FE39}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Stock", "VendingMachine.Stock\VendingMachine.Stock.csproj", "{7C45C187-F104-4E34-9A91-2DA43D1CD115}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Stock.Test", "VendingMachine.Stock.Test\VendingMachine.Stock.Test.csproj", "{DFBBC1D5-F7AF-4763-AB57-4480939CD473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Payment.Test", "VendingMachine.Payment.Test\VendingMachine.Payment.Test.csproj", "{A1B74F19-66E9-4806-B044-4201419D3937}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{DFBBC1D5-F7AF-4763-AB57-4480939CD473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFBBC1D5-F7AF-4763-AB57-4480939CD473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFBBC1D5-F7AF-4763-AB57-4480939CD473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B74F19-66E9-4806-B044-4201419D3937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B74F19-66E9-4806-B044-4201419D3937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B74F19-66E9-4806-B044-4201419D3937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B74F19-66E9-4806-B044-4201419D3937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
