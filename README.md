@@ -6,3 +6,4 @@ VendingMachine
 # This app does not consider access control and security vulnerabilities.
 # This code lacks of proper documentation, proper namings has been considered.(Time limitation).
 # This code is not designed to be cater for thread safety in database changes..
+# No user friendly messages or feedbacks has been implemented.(Time limitation).
