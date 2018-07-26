@@ -13,9 +13,9 @@ namespace VendingMachine.Stock.Test
         {
             //init
             var dalMock = new Mock<IVendingDataAccessLayer>();
-            var add = new AddStock("f1", 2, 4);
 
             //act
+            var add = new AddStock("f1", 2, 4);
             new AddStockHandler(dalMock.Object).Handle(add);
 
             //assert
@@ -32,9 +32,9 @@ namespace VendingMachine.Stock.Test
         {
             //init
             var dalMock = new Mock<IVendingDataAccessLayer>();
-            var delete = new DeleteStock("f1");
 
             //act
+            var delete = new DeleteStock("f1");
             new DeleteStockHandler(dalMock.Object).Handle(delete);
 
             //assert
@@ -95,7 +95,7 @@ namespace VendingMachine.Stock.Test
                 stock.Add(new CanItem($"flavour{i}", 2, 2.5m));
 
             dalMock.Setup(layer =>
-                layer.GetAll()).Returns(() => stock);
+                layer.GetAll()).Returns(() => stock).Verifiable();
 
             //act
             var add = new AddStock("new flavour", 2, 4);
